@@ -17,6 +17,7 @@ public class AppConfig {
 
     @Bean   // 스프링 컨테이너에 등록된다.
     public MemberRepository memberRepository() {    // 객체 생성을 메소드 처리
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();        // 새로운 구현체를 주입 하고 싶다면 new 객체를 수정하면 된다.
     }
 
@@ -28,11 +29,13 @@ public class AppConfig {
 
     @Bean
     public MemberService memberService(){
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public OrderService orderService(){
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 }
