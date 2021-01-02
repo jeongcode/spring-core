@@ -11,6 +11,7 @@ import hello.core.discount.DiscountPolicy;
         import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration      // 애플리케이션의 설정 정보
 public class AppConfig {
